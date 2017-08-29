@@ -17,36 +17,52 @@ static void to_upper(char* string){
 
 char* get_name(){
 	char* name = malloc(MAX_LENGTH_NAME*sizeof(char));
-	printf(INSERT_NAME);
-	gets(name);
-	to_upper(name);
-	return name;
+	if (name==NULL){
+		return NULL;
+	} else {
+		printf(INSERT_NAME);
+		gets(name);
+		to_upper(name);
+		return name;
+	}
 }
 
 char* get_surname(){
 	fflush(stdin);
 	char* surname = malloc(MAX_LENGTH_NAME*sizeof(char));
-	printf(INSERT_SURNAME);
-	gets(surname);
-	to_upper(surname);
-	return surname;
+	if (surname==NULL){
+		return NULL;
+	} else {
+		printf(INSERT_SURNAME);
+		gets(surname);
+		to_upper(surname);
+		return surname;
+	}
 }
 
 char* get_birth_date(){
 	char* date = malloc(LENGTH_DATE*sizeof(char));
 	fflush(stdin);
-	printf(INSERT_DATE);
-	gets(date);
-	return date;
+	if (date==NULL){
+		return NULL;
+	} else {
+		printf(INSERT_DATE);
+		gets(date);
+		return date;
+	}
 }
 
 char* get_birth_town(){
 	fflush(stdin);
 	char* town = malloc(MAX_LENGTH_NAME*sizeof(char));
-	printf(INSERT_TOWN);
-	gets(town);
-	to_upper(town);
-	return town;
+	if (town == NULL){
+		return NULL;
+	} else {
+		printf(INSERT_TOWN);
+		gets(town);
+		to_upper(town);
+		return town;
+	}
 }
 
 char get_sex(){
