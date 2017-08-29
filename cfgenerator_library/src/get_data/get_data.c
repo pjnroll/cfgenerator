@@ -21,7 +21,7 @@ char* get_name(){
 		return NULL;
 	} else {
 		printf(INSERT_NAME);
-		gets(name);
+		fgets(name,MAX_LENGTH_NAME,stdin);
 		to_upper(name);
 		return name;
 	}
@@ -34,7 +34,7 @@ char* get_surname(){
 		return NULL;
 	} else {
 		printf(INSERT_SURNAME);
-		gets(surname);
+		fgets(surname,MAX_LENGTH_SURNAME,stdin);
 		to_upper(surname);
 		return surname;
 	}
@@ -47,7 +47,7 @@ char* get_birth_date(){
 		return NULL;
 	} else {
 		printf(INSERT_DATE);
-		gets(date);
+		fgets(date,LENGTH_DATE,stdin);
 		return date;
 	}
 }
@@ -59,7 +59,7 @@ char* get_birth_town(){
 		return NULL;
 	} else {
 		printf(INSERT_TOWN);
-		gets(town);
+		fgets(town,MAX_LENGTH_TOWN,stdin);
 		to_upper(town);
 		return town;
 	}

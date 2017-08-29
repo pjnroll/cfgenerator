@@ -17,7 +17,7 @@
 #define MAX_LENGTH_NAME     60
 #define MAX_LENGTH_SURNAME  MAX_LENGTH_NAME
 #define MAX_LENGTH_TOWN     MAX_LENGTH_NAME
-#define LENGTH_DATE			10
+#define LENGTH_DATE			11
 #define INSERT_NAME 		"Nome>"
 #define INSERT_SURNAME 		"Cognome>"
 #define INSERT_DATE 		"Data di nascita (formato GG/MM/AAAA)>"
