@@ -16,56 +16,31 @@ static char* to_upper(char* string){
 	return string;
 }
 
-char* get_name(){
-	fflush(stdin);
-	char* name=malloc(MAX_LENGTH_NAME*sizeof(char));
-	if (name==NULL){
-		printf("Impossibile inserire il nome");
-	} else {
-		name = to_upper(name);
-		printf(INSERT_NAME);
-		gets(name);
-		name = to_upper(name);
-	}
-	return name;
+void get_name(char* name){
+	name = to_upper(name);
+	printf(INSERT_NAME);
+	gets(name);
+	name = to_upper(name);
 }
 
-char* get_surname(){
+void get_surname(char* surname){
 	fflush(stdin);
-	char* surname=malloc(MAX_LENGTH_SURNAME*sizeof(char));
-	if (surname==NULL){
-		printf("Impossibile inserire il cognome");
-	} else {
-		printf(INSERT_SURNAME);
-		gets(surname);
-		surname = to_upper(surname);
-	}
-	return surname;
+	printf(INSERT_SURNAME);
+	gets(surname);
+	surname = to_upper(surname);
 }
 
-char* get_birth_date(){
+void get_birth_date(char* date){
 	fflush(stdin);
-	char* date=malloc(LENGTH_DATE*sizeof(char));
-	if (date==NULL){
-		printf("Impossibile inserire la data di nascita");
-	} else {
-		printf(INSERT_DATE);
-		gets(date);
-	}
-	return date;
+	printf(INSERT_DATE);
+	gets(date);
 }
 
-char* get_birth_town(){
+void get_birth_town(char* town){
 	fflush(stdin);
-	char* town=malloc(MAX_LENGTH_TOWN*sizeof(char));
-	if (town==NULL){
-		printf("Impossibile inserire il comune di nascita");
-	} else {
-		printf(INSERT_TOWN);
-		gets(town);
-		town = to_upper(town);
-	}
-	return town;
+	printf(INSERT_TOWN);
+	gets(town);
+	town = to_upper(town);
 }
 
 char get_sex(){

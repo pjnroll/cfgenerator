@@ -205,7 +205,7 @@ static bool is_valid_date(char* date){
 		result = false;
 	}
 	if (
-			number_a(date[SEVEN],date[EIGHT],date[NINE],date[TEN])<MIN_YEAR&&
+			number_a(date[SEVEN],date[EIGHT],date[NINE],date[TEN])<MIN_YEAR||
 			number_a(date[SEVEN],date[EIGHT],date[NINE],date[TEN])>MAX_YEAR
 	){
 		result = false;
