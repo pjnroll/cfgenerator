@@ -51,6 +51,10 @@ char* read_birth_place_code(FILE* places_file,char* birth_place){
 	if (found == false)
 		result = NULL;
 	strtok(result, "\n");
+	free(string);
+	free(code);
+	string = NULL;
+	code = NULL;
 	assert(is_valid_code(result));
 	return result;
 }

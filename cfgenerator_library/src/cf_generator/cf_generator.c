@@ -117,9 +117,10 @@ void name_code(char surname[], char code[]){
 
 void surname_code(char surname[], char code[]){
 	assert(surname!=NULL);
-	char consonants[strlen(surname)];
+	int length = strlen(surname);
+	char consonants[length];
 	get_consonants(surname,consonants);
-	char vowels[strlen(surname)];
+	char vowels[length];;
 	get_vowels(surname,vowels);
 	if (strlen(consonants) >= THREE){
 		code[ZERO] = consonants[ZERO];
