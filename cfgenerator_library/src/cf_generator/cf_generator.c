@@ -393,7 +393,7 @@ char ctrl_code(char coded_name[], char coded_surname[], char coded_birth_date[],
 }
 
 void cf_generator(
-		char name[], char surname[], char birth_date[], char coded_town[], char sex, char code[]
+		char name[], char surname[], char birth_date[], char birth_town[], char sex, char code[]
 		){
 	char coded_surname[4];
 	char coded_name[4];
@@ -412,6 +412,9 @@ void cf_generator(
 	code[8] = coded_birth_date[2];
 	code[9] = coded_birth_date[3];
 	code[10] = coded_birth_date[4];
+	FILE* file = fopen(FILE_NAME,FILE_MODE);
+	char * coded_town = read_birth_place_code(file,birth_town);
+	fclose(file);
 	code[11] = coded_town[0];
 	code[12] = coded_town[1];
 	code[13] = coded_town[2];

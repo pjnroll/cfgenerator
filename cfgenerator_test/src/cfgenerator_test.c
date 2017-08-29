@@ -46,7 +46,8 @@ void test_code_town(){
 	CU_ASSERT_STRING_EQUAL(read_birth_place_code(file,"MOLA DI BARI"), "F280");
 	fclose(file);
 	file = fopen("comuni.csv","r");
-	CU_ASSERT_STRING_EQUAL(read_birth_place_code(file,"BARI"), "A662");
+	char* code = read_birth_place_code(file,"BARI");
+	CU_ASSERT_STRING_EQUAL(code, "A662");
 	fclose(file);
 }
 

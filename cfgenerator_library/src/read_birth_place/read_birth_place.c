@@ -39,9 +39,8 @@ char* read_birth_place_code(FILE* places_file,char* birth_place){
 		ungetc(c, places_file);
 		fgets(string, 100, places_file);
 		town = strtok(string, ",");
-		if (code!=NULL){
 			code = strtok(NULL, ",");
-		}
+
 		if((strcmp(birth_place, town)) == 0){
 			strcpy(result, code);
 			found = true;
@@ -51,10 +50,6 @@ char* read_birth_place_code(FILE* places_file,char* birth_place){
 	if (found == false)
 		result = NULL;
 	strtok(result, "\n");
-	free(string);
-	free(code);
-	string = NULL;
-	code = NULL;
 	assert(is_valid_code(result));
 	return result;
 }

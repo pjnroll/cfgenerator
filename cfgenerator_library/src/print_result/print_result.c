@@ -7,9 +7,13 @@
 
 #include "print_result.h"
 
-void print_result(char* name, char* surname, char* date, char* code_town, char sex){
+void print_result(char* name, char* surname, char* date, char* town, char sex){
+	puts(name);
+	puts(surname);
+	puts(date);
+	puts(town);
 	char code[17];
-	cf_generator(name,surname,date,code_town,sex,code);
+	cf_generator(name,surname,date,town,sex,code);
 	printf(
 			"\n"
 			"================================\n"

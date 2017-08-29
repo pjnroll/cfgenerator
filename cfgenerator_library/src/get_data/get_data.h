@@ -28,25 +28,25 @@
  * Acquisisce il nome
  * @return
  */
-void get_name();
+char* get_name();
 
 /**
  * Acquisisce il cognome
  * @return
  */
-void get_surname();
+char* get_surname();
 
 /**
  * Acquisisce la data di nascita
  * @return
  */
-void get_birth_date();
+char* get_birth_date();
 
 /**
  * Acquisisce il comune di nascita
  * @return
  */
-void get_birth_town();
+char* get_birth_town();
 
 /**
  * Acquisisce il sesso
