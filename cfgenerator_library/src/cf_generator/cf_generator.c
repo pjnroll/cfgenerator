@@ -173,14 +173,6 @@ void surname_code(char surname[], char code[]){
 	assert(is_valid_coded_surname_name(code));
 }
 
-static int number(char a, char b){
-	return TEN*(a-ASCII)+(b-ASCII);
-}
-
-static int number_a(char a, char b, char c, char d){
-	return TEN*TEN*TEN*(a-ASCII)+TEN*TEN*(b-ASCII)+TEN*(c-ASCII)+(d-ASCII);
-}
-
 static bool is_valid_date(char* date){
 	bool result = true;
 	if (strlen(date) != TEN) {
@@ -195,21 +187,6 @@ static bool is_valid_date(char* date){
 				result = false;
 			}
 		}
-	}
-	if (number(date[ZERO],date[ONE])==ZERO&&number(date[ZERO],date[ONE])>THIRTYONE){
-		result = false;
-	}
-	if (number(date[THREE],date[FOUR])==ZERO&&number(date[THREE],date[FOUR])>TWELVE){
-		result = false;
-	}
-	if (number(date[THREE],date[FOUR])==ZERO&&number(date[THREE],date[FOUR])>TWELVE){
-		result = false;
-	}
-	if (
-			number_a(date[SEVEN],date[EIGHT],date[NINE],date[TEN])<MIN_YEAR||
-			number_a(date[SEVEN],date[EIGHT],date[NINE],date[TEN])>MAX_YEAR
-	){
-		result = false;
 	}
 	return result;
 }
