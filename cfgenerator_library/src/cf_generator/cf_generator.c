@@ -413,12 +413,17 @@ void cf_generator(
 	code[9] = coded_birth_date[3];
 	code[10] = coded_birth_date[4];
 	FILE* file = fopen(FILE_NAME,FILE_MODE);
-	char * coded_town = read_birth_place_code(file,birth_town);
-	fclose(file);
-	code[11] = coded_town[0];
-	code[12] = coded_town[1];
-	code[13] = coded_town[2];
-	code[14] = coded_town[3];
-	code[15] = ctrl_code(coded_name,coded_surname,coded_birth_date,coded_town);
-	code[16] = EOS;
+	if (file==NULL){
+		code[11]=EOS;
+		printf("Il file dei codici catastati non è stato aperto");
+	} else {
+		char * coded_town = read_birth_place_code(file,birth_town);
+		fclose(file);
+		code[11] = coded_town[0];
+		code[12] = coded_town[1];
+		code[13] = coded_town[2];
+		code[14] = coded_town[3];
+		code[15] = ctrl_code(coded_name,coded_surname,coded_birth_date,coded_town);
+		code[16] = EOS;
+	}
 }

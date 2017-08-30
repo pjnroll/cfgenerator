@@ -66,13 +66,13 @@ void test_surname_code(){
 
 void test_cf_generator(){
 	char code[17];
-	cf_generator("ANNA","DIANA","21/11/1920","A662",'F',code);
+	cf_generator("ANNA","DIANA","21/11/1920","BARI",'F',code);
 	CU_ASSERT_STRING_EQUAL(code,"DNINNA20S61A662R");
-	cf_generator("GABRIELE","FORTUNATO","02/10/1978","F280",'M',code);
+	cf_generator("GABRIELE","FORTUNATO","02/10/1978","MOLA DI BARI",'M',code);
 	CU_ASSERT_STRING_EQUAL(code,"FRTGRL78R02F280W");
-	cf_generator("ANNA","MONNO","17/05/1975","A662",'F',code);
+	cf_generator("ANNA","MONNO","17/05/1975","BARI",'F',code);
 	CU_ASSERT_STRING_EQUAL(code,"MNNNNA75E57A662H");
-	cf_generator("FRANCESCO","FORTUNATO","15/04/1951","A662",'M',code);
+	cf_generator("FRANCESCO","FORTUNATO","15/04/1951","BARI",'M',code);
 	CU_ASSERT_STRING_EQUAL(code,"FRTFNC51D15A662C");
 }
 

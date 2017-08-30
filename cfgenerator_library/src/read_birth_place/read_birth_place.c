@@ -30,26 +30,33 @@ static bool is_valid_code(char* code){
 char* read_birth_place_code(FILE* places_file,char* birth_place){
 	assert(places_file!=NULL);
 	char* string = (char*) malloc(sizeof(char)*STRLEN);
-	int c;
-	char* town = (char*) malloc(sizeof(char)*50);
-	char* code = (char*) malloc(sizeof(char)*5);
-	char* result = (char*) malloc(sizeof(char)*5);
-	bool found = false;
-	while((c = fgetc(places_file)) != EOF){
-		ungetc(c, places_file);
-		fgets(string, 100, places_file);
-		town = strtok(string, ",");
+	if (string==NULL){
+		return NULL;
+	} else {
+		int c;
+		char* town = (char*) malloc(sizeof(char)*50);
+		char* code = (char*) malloc(sizeof(char)*5);
+		char* result = (char*) malloc(sizeof(char)*5);
+		bool found = false;
+		while((c = fgetc(places_file)) != EOF){
+			ungetc(c, places_file);
+			fgets(string, 100, places_file);
+			town = strtok(string, ",");
 			code = strtok(NULL, ",");
-
-		if((strcmp(birth_place, town)) == 0){
-			strcpy(result, code);
-			found = true;
-			break;
+			if (code==NULL){
+				return NULL;
+			} else {
+				if((strcmp(birth_place, town)) == 0){
+					strcpy(result, code);
+					found = true;
+					break;
+				}
+			}
 		}
+		if (found == false)
+			result = NULL;
+		strtok(result, "\n");
+		assert(is_valid_code(result));
+		return result;
 	}
-	if (found == false)
-		result = NULL;
-	strtok(result, "\n");
-	assert(is_valid_code(result));
-	return result;
 }
